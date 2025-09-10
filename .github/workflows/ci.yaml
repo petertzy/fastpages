@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - master # need to filter here so we only deploy when there is a push to master
+      - main # need to filter here so we only deploy when there is a push to master
   # no filters on pull requests, so intentionally left blank
   pull_request:
   workflow_dispatch:
@@ -47,7 +47,10 @@ jobs:
       - name: Jekyll build
         uses: docker://fastai/fastpages-jekyll
         with:
-          args: bash -c "jekyll build -V --strict_front_matter --trace"
+          args: bash -c "\
+            gem update --system && \
+            jekyll build -V --strict_front_matter --trace\
+          "
         env:
           JEKYLL_ENV: "production"
 
