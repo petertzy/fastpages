@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  </head>
+  <body>
+    <header>
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      {% if site.description %}
+      <p>{{ site.description }}</p>
+      {% endif %}
+      <nav>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

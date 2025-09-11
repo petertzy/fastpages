@@ -27,7 +27,8 @@ group :jekyll_plugins do
 end
 
 gem "kramdown-math-katex"
-gem "jemoji"
+# gem "jemoji"
+gem "jemoji", github: "jekyll/jemoji"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
@@ -41,3 +42,8 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 gem "faraday", "< 1.0"
 
+gem "nokogiri", "1.18.9", platforms: :ruby
+
+gem "html-pipeline", ">= 2.14.3"
+
+gem "webrick"
