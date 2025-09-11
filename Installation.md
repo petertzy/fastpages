@@ -7,6 +7,7 @@ bundle exec jekyll serve
 你必须在 master 分支构建网站后，再把 _site 的内容复制到 gh-pages 分支：
 ```bash
 # 在 master 分支
+bundle install
 bundle exec jekyll build
 
 # 切换到 gh-pages
